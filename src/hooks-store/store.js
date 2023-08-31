@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 let globalState = {};
 
@@ -31,7 +31,7 @@ export const useStore = () => {
 
 export const initStore = (userActions, initialState) => {
   if (initialState) {
-    globalState = { ...globalState, initialState };
+    globalState = { ...globalState, ...initialState };
   }
 
   actions = { ...actions, ...userActions };
